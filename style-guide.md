@@ -6,6 +6,14 @@ The designs were created to the following widths:
 
 - Mobile: 375px
 - Desktop: 1440px
+  header: 203w x 412h
+    padding profile icon 22l 28t, 26l text
+  modules: 203w x 194h
+   banner: 36h
+   padding: 29h x 25w
+  grid 1 x 2 x 2 x 2
+  grid gap: 24
+
 
 ## Colors
 
