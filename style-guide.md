@@ -5,11 +5,16 @@
 The designs were created to the following widths:
 
 - Mobile: 375px
+  header 327 w x 203h
+  section  327w x 136h
+    banner 36ph
+    padding 24l 32t 36b
+
 - Desktop: 1440px
   header: 203w x 412h
     padding profile icon 22l 28t, 26l text
   modules: 203w x 194h
-   banner: 36h
+![](http://localhost:3000/images/image-jeremy.png)   banner: 36h
    padding: 29h x 25w
   grid 1 x 2 x 2 x 2
   grid gap: 24

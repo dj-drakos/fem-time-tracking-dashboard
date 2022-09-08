@@ -1,3 +1,42 @@
+.App {
+  --card-width: 327px;
+  --card-height: 136px;
+  --gap: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap);
+  margin: calc(var(--gap) * 2);
+}
+
+header {
+  height: 203px;
+  width: var(--card-width);
+}
+
+header > img {
+  width: 70px;
+  height: auto;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+main {
+  display: inherit;
+  flex-direction: inherit;
+  gap: 24px;
+}
+
+header, section {
+  background: hsl(235, 46%, 20%);
+}
+
+section {
+  height: var(--card-height);
+  width: var(--card-width);
+}
+
 .attribution { 
   font-size: 11px;
   text-align: center; 
@@ -5,4 +44,37 @@
 
 .attribution a { 
   color: hsl(228, 45%, 44%); 
+}
+
+@media only screen and (min-width: 500px) {
+  .App {
+    --card-width: 203px;
+    --card-height: 194px;
+    --gap: 24px;
+    display: grid;
+    grid-template:  'head main' 1fr
+    'foot foot' auto / var(--card-width) 657px;
+    gap: 24px;
+    margin: 0;
+  }
+  
+  header, main {
+    height: calc(var(--card-height) * 2 + var(--gap));
+  }
+  
+  header {
+    grid-area: head;
+  }
+  
+  main {
+    grid-area: main;
+    display: grid;
+    grid-template: repeat(2, 194px) / repeat(3, var(--card-width));
+    gap: 24px;
+  }
+  
+  footer {
+    grid-area: foot;
+    padding: 3px;
+  }
 }

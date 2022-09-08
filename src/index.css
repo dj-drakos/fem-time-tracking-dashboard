@@ -18,6 +18,12 @@ html, body, #root {
   height: 100%;
 }
 
+body, #root {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
 body {
   font-family: 'Rubik', sans-serif;
   -webkit-font-smoothing: antialiased;

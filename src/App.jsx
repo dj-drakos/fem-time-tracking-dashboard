@@ -20,42 +20,42 @@ function App() {
       <main>
         <section>
           <h2>Work</h2>
-          <img src="./images/icon/ellipses.svg" alt="More Information" />
+          <img src="./images/icon-ellipsis.svg" alt="More Information" />
           <p>5hrs</p>
           <p>Previous - 7hrs</p>
         </section>
 
         <section>
         <h2>Play</h2>
-          <img src="./images/icon/ellipses.svg" alt="More Information" />
+          <img src="./images/icon-ellipsis.svg" alt="More Information" />
           <p>5hrs</p>
           <p>Previous - 7hrs</p>
         </section>
 
         <section>
         <h2>Study</h2>
-          <img src="./images/icon/ellipses.svg" alt="More Information" />
+          <img src="./images/icon-ellipsis.svg" alt="More Information" />
           <p>5hrs</p>
           <p>Previous - 7hrs</p>
         </section>
 
         <section>
         <h2>Exercise</h2>
-          <img src="./images/icon/ellipses.svg" alt="More Information" />
+          <img src="./images/icon-ellipsis.svg" alt="More Information" />
           <p>5hrs</p>
           <p>Previous - 7hrs</p>
         </section>
 
         <section>
         <h2>Social</h2>
-          <img src="./images/icon/ellipses.svg" alt="More Information" />
+          <img src="./images/icon-ellipsis.svg" alt="More Information" />
           <p>5hrs</p>
           <p>Previous - 7hrs</p>
         </section>
 
         <section>
         <h2>Self Care</h2>
-            <img src="./images/icon/ellipses.svg" alt="More Information" />
+            <img src="./images/icon-ellipsis.svg" alt="More Information" />
             <p>5hrs</p>
             <p>Previous - 7hrs</p>
         </section>
