@@ -2,6 +2,7 @@
   --card-width: 327px;
   --card-height: 136px;
   --gap: 24px;
+  --corner: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,26 +16,66 @@ header {
   width: var(--card-width);
 }
 
-header > img {
-  width: 70px;
-  height: auto;
-  border: 2px solid white;
-  border-radius: 50%;
-}
-
 main {
   display: inherit;
   flex-direction: inherit;
   gap: 24px;
 }
 
-header, section {
-  background: hsl(235, 46%, 20%);
+.profile {
+  background: hsl(246, 80%, 60%);
+  border-radius: var(--corner);
 }
 
-section {
+.profile > img {
+  width: 70px;
+  height: auto;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+header, .activity-card {
+  background: hsl(235, 46%, 20%);
+  border-radius: var(--corner);
+}
+
+.activity-card {
+  padding: 32px 24px;
   height: var(--card-height);
   width: var(--card-width);
+  display: grid;
+  grid-template: 'one two' auto
+                'three four' auto / 1fr 1fr;
+  place-content: space-between;
+}
+
+.activity-card > .one {
+  grid-area: one;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.activity-card > .two {
+  grid-area: two;
+  justify-self: flex-end;
+}
+
+.activity-card > .three {
+  grid-area: three;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.activity-card > .four {
+  grid-area: four;
+  justify-self:  flex-end;
+  align-self: center;
+  font-size: .9rem;
+  color: hsl(236, 100%, 87%);
+}
+
+h2, img {
+  display: inline-block;
 }
 
 .attribution { 
@@ -43,9 +84,8 @@ section {
 }
 
 .attribution a { 
-  color: hsl(228, 45%, 44%); 
+  color: hsl(228, 45%, 44%);
 }
-
 @media only screen and (min-width: 500px) {
   .App {
     --card-width: 203px;
@@ -73,6 +113,20 @@ section {
     gap: 24px;
   }
   
+  .activity-card {
+    grid-template: 'one two' auto
+                  'three three' auto
+                  'four four' auto / 1fr 1fr;
+  }
+
+  .activity-card > .three {
+    font-size: 3.5rem;
+  }
+
+  .activity-card > .four {
+    justify-self: auto;
+  }
+
   footer {
     grid-area: foot;
     padding: 3px;
