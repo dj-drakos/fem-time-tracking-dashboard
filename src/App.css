@@ -1,6 +1,7 @@
 .App {
   --card-width: 327px;
-  --card-height: 136px;
+  --card-height: 160px;
+  --banner-height: 38px;
   --gap: 24px;
   --corner: 12px;
   display: flex;
@@ -34,39 +35,55 @@ main {
   border-radius: 50%;
 }
 
-header, .activity-card {
+header, .activity-card-data {
   background: hsl(235, 46%, 20%);
   border-radius: var(--corner);
 }
 
 .activity-card {
-  padding: 32px 24px;
   height: var(--card-height);
   width: var(--card-width);
+  border-radius: var(--corner);
+  display: grid;
+  grid-template: var(--banner-height) auto / var(--card-width);
+}
+
+.activity-card-data {
+  padding: 28px 24px;
   display: grid;
   grid-template: 'one two' auto
                 'three four' auto / 1fr 1fr;
-  place-content: space-between;
+
 }
 
-.activity-card > .one {
+.work {
+  background: hsl(15, 100%, 70%);
+  overflow: hidden;
+}
+
+.card-banner{
+  margin-top: -10px;
+  margin-left: auto;
+}
+
+.activity-card-data > .one {
   grid-area: one;
   font-size: 1.125rem;
   font-weight: 500;
 }
 
-.activity-card > .two {
+.activity-card-data > .two {
   grid-area: two;
   justify-self: flex-end;
 }
 
-.activity-card > .three {
+.activity-card-data > .three {
   grid-area: three;
   font-size: 2rem;
   font-weight: 300;
 }
 
-.activity-card > .four {
+.activity-card-data > .four {
   grid-area: four;
   justify-self:  flex-end;
   align-self: center;
@@ -76,6 +93,7 @@ header, .activity-card {
 
 h2, img {
   display: inline-block;
+  object-fit: contain;
 }
 
 .attribution { 
@@ -113,17 +131,17 @@ h2, img {
     gap: 24px;
   }
   
-  .activity-card {
+  .activity-card-data {
     grid-template: 'one two' auto
                   'three three' auto
                   'four four' auto / 1fr 1fr;
   }
 
-  .activity-card > .three {
+  .activity-card-data > .three {
     font-size: 3.5rem;
   }
 
-  .activity-card > .four {
+  .activity-card-data > .four {
     justify-self: auto;
   }
 

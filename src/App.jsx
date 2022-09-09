@@ -20,11 +20,14 @@ function App() {
       </header>
 
       <main>
-        <section className='activity-card'>
+        <section className='activity-card work'>
+        <img className ="card-banner" src="./images/icon-work.svg" alt="More Information" />
+        <div className="activity-card-data">
           <h2 className ="one">Work</h2>
           <img className ="two" src="./images/icon-ellipsis.svg" alt="More Information" />
           <p className ="three">5hrs</p>
           <p className ="four">Previous - 7hrs</p>
+        </div>
         </section>
 
         <section className='activity-card'>
