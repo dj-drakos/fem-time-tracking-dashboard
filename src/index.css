@@ -14,14 +14,14 @@
   margin: 0;
 }
 
-html, body, #root {
+html, body, #root, .App {
   height: 100%;
 }
 
 body, #root {
   display: flex;
-  justify-content: center;
-  align-items: stretch;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 body {
@@ -47,6 +47,6 @@ ul, ol {
   padding: 0;
 }
 
-button {
+button, a {
   cursor: pointer;
 }
