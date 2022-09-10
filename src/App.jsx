@@ -21,48 +21,57 @@ function App() {
 
       <main>
         <section className='activity-card work'>
-        <img className ="card-banner" src="./images/icon-work.svg" alt="More Information" />
         <div className="activity-card-data">
-          <h2 className ="one">Work</h2>
-          <img className ="two" src="./images/icon-ellipsis.svg" alt="More Information" />
-          <p className ="three">5hrs</p>
-          <p className ="four">Previous - 7hrs</p>
+          <h2>Work</h2>
+          <img src="./images/icon-ellipsis.svg" alt="More Information" />
+          <p>5hrs</p>
+          <p>Previous - 7hrs</p>
         </div>
         </section>
 
-        <section className='activity-card'>
-          <h2 className="one">Play</h2>
-          <img className="two" src="./images/icon-ellipsis.svg" alt="More Information" />
-          <p className="three">5hrs</p>
-          <p className="four">Previous - 7hrs</p>
+        <section className='activity-card play'>
+          <div className="activity-card-data">
+            <h2>Play</h2>
+            <img src="./images/icon-ellipsis.svg" alt="More Information" />
+            <p>5hrs</p>
+            <p>Previous - 7hrs</p>
+          </div>
         </section>
 
-        <section className='activity-card'>
-          <h2 className="one">Study</h2>
-          <img className="two" src="./images/icon-ellipsis.svg" alt="More Information" />
-          <p className="three">5hrs</p>
-          <p className="four">Previous - 7hrs</p>
+        <section className='activity-card study'>
+          <div className="activity-card-data">
+            <h2>Study</h2>
+            <img src="./images/icon-ellipsis.svg" alt="More Information" />
+            <p> 5hrs</p>
+            <p>Previous - 7hrs</p>
+          </div>
         </section>
 
-        <section className='activity-card'>
-          <h2 className ="one">Exercise</h2>
-          <img className ="two" src="./images/icon-ellipsis.svg" alt="More Information" />
-          <p className ="three">5hrs</p>
-          <p className ="four">Previous - 7hrs</p>
+        <section className='activity-card exercise'>
+          <div className="activity-card-data">
+            <h2 >Exercise</h2>
+            <img src="./images/icon-ellipsis.svg" alt="More Information" />
+            <p>5hrs</p>
+            <p>Previous - 7hrs</p>
+          </div>
         </section>
 
-        <section className='activity-card'>
-          <h2 className ="one">Social</h2>
-          <img className ="two" src="./images/icon-ellipsis.svg" alt="More Information" />
-          <p className ="three">5hrs</p>
-          <p className ="four">Previous - 7hrs</p>
+        <section className='activity-card social'>
+          <div className="activity-card-data">
+            <h2 >Social</h2>
+            <img src="./images/icon-ellipsis.svg" alt="More Information" />
+            <p>5hrs</p>
+            <p>Previous - 7hrs</p>
+          </div>
         </section>
 
-        <section className='activity-card'>
-          <h2 className ="one">Self Care</h2>
-          <img className ="two" src="./images/icon-ellipsis.svg" alt="More Information" />
-          <p className ="three">5hrs</p>
-          <p className ="four">Previous - 7hrs</p>
+        <section className='activity-card self-care'>
+            <div className="activity-card-data">
+            <h2 >Self Care</h2>
+            <img src="./images/icon-ellipsis.svg" alt="More Information" />
+            <p>5hrs</p>
+            <p>Previous - 7hrs</p>
+          </div>
         </section>
       </main>
       

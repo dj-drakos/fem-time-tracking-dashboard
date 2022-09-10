@@ -4,22 +4,23 @@
   --banner-height: 38px;
   --gap: 24px;
   --corner: 12px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template:  'head' 203px
+                  'main' 1fr
+                  'foot' auto / var(--card-width);
+  justify-content: center;
   align-items: center;
-  justify-content: flex-start;
   gap: var(--gap);
-  margin: calc(var(--gap) * 2);
 }
 
 header {
-  height: 203px;
-  width: var(--card-width);
+  grid-area: head;
 }
 
 main {
-  display: inherit;
-  flex-direction: inherit;
+  grid-area: main;
+  display: grid;
+  grid-template: repeat(6, var(--card-height)) / var(--card-width);
   gap: 24px;
 }
 
@@ -41,49 +42,89 @@ header, .activity-card-data {
 }
 
 .activity-card {
-  height: var(--card-height);
-  width: var(--card-width);
   border-radius: var(--corner);
   display: grid;
-  grid-template: var(--banner-height) auto / var(--card-width);
+  grid-template: auto / auto;
+  padding-top: var(--banner-height);
 }
 
 .activity-card-data {
   padding: 28px 24px;
   display: grid;
   grid-template: 'one two' auto
-                'three four' auto / 1fr 1fr;
+                'three four' auto / 1fr auto;
+}
 
+.activity-card-data:active {
+  background: hsl(235, 45%, 61%);
 }
 
 .work {
   background: hsl(15, 100%, 70%);
-  overflow: hidden;
+  background-image: url(./images/icon-work.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top -9px right 17px;
 }
 
-.card-banner{
-  margin-top: -10px;
-  margin-left: auto;
+.play {
+  background: hsl(195, 74%, 62%);
+  background-image: url(./images/icon-play.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top -5px right 17px;
 }
 
-.activity-card-data > .one {
+.study {
+  background: hsl(348, 100%, 68%);
+  background-image: url(./images/icon-study.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top -5px right 17px;
+}
+
+.exercise {
+  background: hsl(145, 58%, 55%);
+  background-image: url(./images/icon-exercise.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top right 18px;
+}
+
+.social {
+  background: hsl(264, 64%, 52%);
+  background-image: url(./images/icon-social.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top -13px right 20px;
+}
+
+.self-care {
+  background: hsl(43, 84%, 65%);
+  background-image: url(./images/icon-self-care.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top -13px right 17px;
+}
+
+.activity-card-data > :first-child {
   grid-area: one;
   font-size: 1.125rem;
   font-weight: 500;
 }
 
-.activity-card-data > .two {
+.activity-card-data > :nth-child(2){
   grid-area: two;
   justify-self: flex-end;
 }
 
-.activity-card-data > .three {
+.activity-card-data > :nth-child(3) {
   grid-area: three;
   font-size: 2rem;
   font-weight: 300;
 }
 
-.activity-card-data > .four {
+.activity-card-data > :nth-child(4) {
   grid-area: four;
   justify-self:  flex-end;
   align-self: center;
@@ -93,10 +134,11 @@ header, .activity-card-data {
 
 h2, img {
   display: inline-block;
-  object-fit: contain;
 }
 
-.attribution { 
+footer {
+  grid-area: foot;
+  padding: 4px;
   font-size: 11px;
   text-align: center; 
 }
@@ -104,49 +146,40 @@ h2, img {
 .attribution a { 
   color: hsl(228, 45%, 44%);
 }
+
 @media only screen and (min-width: 500px) {
   .App {
-    --card-width: 203px;
-    --card-height: 194px;
-    --gap: 24px;
+    --banner-height: 45px;
+    --card-width: 255px;
+    --card-height: 244px;
+    --gap: 30px;
     display: grid;
     grid-template:  'head main' 1fr
-    'foot foot' auto / var(--card-width) 657px;
-    gap: 24px;
-    margin: 0;
+                    'foot foot' auto / var(--card-width) auto;
+    gap: var(--gap);
   }
   
   header, main {
     height: calc(var(--card-height) * 2 + var(--gap));
   }
   
-  header {
-    grid-area: head;
-  }
-  
   main {
-    grid-area: main;
-    display: grid;
-    grid-template: repeat(2, 194px) / repeat(3, var(--card-width));
-    gap: 24px;
-  }
-  
-  .activity-card-data {
-    grid-template: 'one two' auto
-                  'three three' auto
-                  'four four' auto / 1fr 1fr;
+    grid-template: repeat(2, var(--card-height)) / repeat(3, var(--card-width));
+    gap: var(--gap);
   }
 
-  .activity-card-data > .three {
+  .activity-card-data {
+    padding: 32px 30px;
+    grid-template: 'one two' auto
+                  'three three' auto
+                  'four four' auto / 1fr 20px;
+  }
+
+  .activity-card-data > :nth-child(3) {
     font-size: 3.5rem;
   }
 
-  .activity-card-data > .four {
+  .activity-card-data > :nth-child(4) {
     justify-self: auto;
-  }
-
-  footer {
-    grid-area: foot;
-    padding: 3px;
   }
 }
