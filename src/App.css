@@ -63,6 +63,9 @@ ul {
   font-weight: 400;
 }
 
+li {
+  text-transform: capitalize;
+}
 li:active{
   color: white;
 }
