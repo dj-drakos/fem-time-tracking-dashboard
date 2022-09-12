@@ -1,8 +1,3 @@
-.activity-card-data {
-  background: hsl(235, 46%, 20%);
-  border-radius: var(--corner);
-}
-
 .activity-card {
   border-radius: var(--corner);
   display: grid;
@@ -11,6 +6,9 @@
 }
 
 .activity-card-data {
+  cursor: pointer;
+  background: hsl(235, 46%, 20%);
+  border-radius: var(--corner);
   padding: 28px 24px;
   display: grid;
   grid-template: 'one two' auto
@@ -20,7 +18,6 @@
 .activity-card-data:active {
   background: hsl(235, 45%, 61%);
 }
-
 
 .work {
   background: hsl(15, 100%, 70%);
@@ -77,8 +74,10 @@
 }
 
 .activity-card-data > :nth-child(2){
+  cursor: pointer; 
   grid-area: two;
   justify-self: flex-end;
+  align-items:center;
 }
 
 .activity-card-data > :nth-child(3) {
@@ -95,8 +94,11 @@
   color: hsl(236, 100%, 87%);
 }
 
-@media only screen and (min-width: 500px) {
+.svg:hover svg .ellipsis, .svg:active svg .ellipsis{
+    fill: white;
+}
 
+@media only screen and (min-width: 500px) {
   .activity-card-data {
     padding: 32px 30px;
     grid-template: 'one two' auto
