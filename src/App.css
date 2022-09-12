@@ -1,8 +1,44 @@
-.attribution { 
-  font-size: 11px;
-  text-align: center; 
+.App {
+  --card-width: 327px;
+  --card-height: 160px;
+  --banner-height: 38px;
+  --gap: 24px;
+  --corner: 12px;
+  display: grid;
+  grid-template:  'head' 203px
+                  'main' 1fr
+                  'foot' auto / var(--card-width);
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap);
+  margin: auto;
 }
 
-.attribution a { 
-  color: hsl(228, 45%, 44%); 
+header {
+  grid-area: head;
+}
+
+main > {
+  grid-area: main;
+}
+
+footer {
+  grid-area: foot;
+}
+
+@media only screen and (min-width: 500px) {
+  .App {
+    --banner-height: 45px;
+    --card-width: 255px;
+    --card-height: 244px;
+    --gap: 30px;
+    display: grid;
+    grid-template:  'head main' 1fr
+                    'foot foot' auto / var(--card-width) auto;
+    gap: var(--gap);
+  }
+  
+  header, main {
+    height: calc(var(--card-height) * 2 + var(--gap));
+  }
 }

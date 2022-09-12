@@ -1,0 +1,12 @@
+.activity-list { 
+  display: grid;
+  grid-template: repeat(6, var(--card-height)) / var(--card-width);
+  gap: 24px;
+}
+
+@media only screen and (min-width: 500px) {
+  .activity-list{
+    grid-template: repeat(2, var(--card-height)) / repeat(3, var(--card-width));
+    gap: var(--gap);
+  }
+}
