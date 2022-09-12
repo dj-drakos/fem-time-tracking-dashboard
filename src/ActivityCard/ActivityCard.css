@@ -1,8 +1,3 @@
-.activity-card-data {
-  background: hsl(235, 46%, 20%);
-  border-radius: var(--corner);
-}
-
 .activity-card {
   border-radius: var(--corner);
   display: grid;
@@ -11,6 +6,9 @@
 }
 
 .activity-card-data {
+  cursor: pointer;
+  background: hsl(235, 46%, 20%);
+  border-radius: var(--corner);
   padding: 28px 24px;
   display: grid;
   grid-template: 'one two' auto
@@ -77,8 +75,12 @@
 }
 
 .activity-card-data > :nth-child(2){
+  height: auto;
+  width: auto;
+  cursor: pointer; 
   grid-area: two;
   justify-self: flex-end;
+  padding: auto;
 }
 
 .activity-card-data > :nth-child(3) {
@@ -94,6 +96,11 @@
   font-size: .9rem;
   color: hsl(236, 100%, 87%);
 }
+
+.svg:hover svg .ellipsis, .svg:active svg .ellipsis{
+    fill: white;
+}
+
 
 @media only screen and (min-width: 500px) {
 
