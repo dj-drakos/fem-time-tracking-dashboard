@@ -1,23 +1,12 @@
 import { useState } from 'react';
+import ActivityCard from './ActivityCard/ActivityCard';
 import './App.css';
 import data from './data.json';
 
 function App() {
 
   const timeframes = Object.keys(data[0].timeframes);
-  const [timeframe, setTimeframe] = useState('daily');
-
-  function formatTime(time) {
-    if(time === 1) return `${time} hr`;
-    else return `${time} hrs`
-  }
-
-  function formatPrevDescription() {
-    if(timeframe === 'daily') return 'Yesterday';
-    else if(timeframe === 'weekly') return 'Last Week';
-    else if(timeframe === 'monthly') return 'Last Month';
-    else return 'Last Period';
-  }
+  const [timeframe, setTimeframe] = useState(timeframes[0]);
 
   return (
     <div className="App"> 
@@ -37,14 +26,7 @@ function App() {
 
       <main>
         {data.map(item => (
-          <section key={item.title} className={`activity-card ${item.title.toLowerCase().replace(' ', '-')}`}>
-            <div className="activity-card-data">
-              <h2>{item.title}</h2>
-              <img src="./images/icon-ellipsis.svg" alt="More Information" />
-              <p>{formatTime(item.timeframes[timeframe].current)}</p>
-              <p>{formatPrevDescription()} - {formatTime(item.timeframes[timeframe].previous)}</p>
-            </div>
-          </section>
+          <ActivityCard item={item} timeframe={timeframe}/>
         ))}
       </main>
       
