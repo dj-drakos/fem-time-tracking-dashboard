@@ -1,6 +1,6 @@
 import './Header.css'
 
-export default function Header({setTimeframe, timeframe, timeframes}) {
+export default function Header({setTimeframe, timeframe, timeframeOptions}) {
   return (
     <header>
       <section className="profile">
@@ -13,7 +13,7 @@ export default function Header({setTimeframe, timeframe, timeframes}) {
 
       <nav>
         <ul className="nav">
-          {timeframes.map(item => <li key={item} className={timeframe === item ? 'selected' : undefined}onClick={() => setTimeframe(item)}>{item}</li>)}
+          {timeframeOptions.map(item => <li key={item} className={timeframe === item ? 'selected' : undefined}onClick={() => setTimeframe(item)}>{item}</li>)}
         </ul>
       </nav>
     </header>
