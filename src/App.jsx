@@ -30,7 +30,7 @@ function App() {
 
         <nav>
           <ul>
-            {timeframes.map(item => <li key={item} onClick={() => setTimeframe(item)}>{item}</li>)}
+            {timeframes.map(item => <li key={item} className={timeframe === item && 'selected'}onClick={() => setTimeframe(item)}>{item}</li>)}
           </ul>
         </nav>
       </header>
