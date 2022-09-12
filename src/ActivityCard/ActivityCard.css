@@ -19,7 +19,6 @@
   background: hsl(235, 45%, 61%);
 }
 
-
 .work {
   background: hsl(15, 100%, 70%);
   background-image: url(../images/icon-work.svg);
@@ -75,12 +74,10 @@
 }
 
 .activity-card-data > :nth-child(2){
-  height: auto;
-  width: auto;
   cursor: pointer; 
   grid-area: two;
   justify-self: flex-end;
-  padding: auto;
+  align-items:center;
 }
 
 .activity-card-data > :nth-child(3) {
@@ -101,9 +98,7 @@
     fill: white;
 }
 
-
 @media only screen and (min-width: 500px) {
-
   .activity-card-data {
     padding: 32px 30px;
     grid-template: 'one two' auto
