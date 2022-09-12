@@ -65,8 +65,10 @@ ul {
 
 li {
   text-transform: capitalize;
+  cursor: pointer;
 }
-li:active{
+
+li:active, li.selected {
   color: white;
 }
 
