@@ -18,8 +18,11 @@ header {
   grid-area: head;
 }
 
-main {
+main > {
   grid-area: main;
+}
+
+main > ul { 
   display: grid;
   grid-template: repeat(6, var(--card-height)) / var(--card-width);
   gap: 24px;
@@ -52,7 +55,7 @@ footer {
     height: calc(var(--card-height) * 2 + var(--gap));
   }
 
-  main {
+  main > ul{
     grid-template: repeat(2, var(--card-height)) / repeat(3, var(--card-width));
     gap: var(--gap);
   }

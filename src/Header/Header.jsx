@@ -5,13 +5,15 @@ export default function Header({setTimeframe, timeframe, timeframes}) {
     <header>
       <section className="profile">
         <img src="./images/image-jeremy.png" alt="Jeremy Robson" />
-        <p>Report for</p>
-        <h1>Jeremy Robson</h1>
+        <div className='info'>
+          <p>Report for</p>
+          <h1>Jeremy Robson</h1>
+        </div>
       </section>
 
       <nav>
-        <ul>
-          {timeframes.map(item => <li key={item} className={timeframe === item && 'selected'}onClick={() => setTimeframe(item)}>{item}</li>)}
+        <ul className="nav">
+          {timeframes.map(item => <li key={item} className={timeframe === item ? 'selected' : undefined}onClick={() => setTimeframe(item)}>{item}</li>)}
         </ul>
       </nav>
     </header>

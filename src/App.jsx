@@ -14,9 +14,10 @@ function App() {
       <Header setTimeframe={setTimeframe} timeframe={timeframe}timeframes={timeframes}/>
 
       <main>
-        {data.map(item => (
-          <ActivityCard item={item} timeframe={timeframe}/>
-        ))}
+        <ul>
+        {data.map(item => <ActivityCard key={item.title} item={item} timeframe={timeframe}/>
+          )}
+        </ul>
       </main>
       
       <footer className="attribution">

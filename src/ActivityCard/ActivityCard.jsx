@@ -17,13 +17,13 @@ export default function ActivityCard({item, timeframe}) {
   }
 
   return (
-    <section key={title} className={`activity-card ${title.toLowerCase().replace(' ', '-')}`}>
-            <div className="activity-card-data">
-              <h2>{title}</h2>
-              <img src="./images/icon-ellipsis.svg" alt="More Information" />
-              <p>{formatTime(timeframes[timeframe]?.current)}</p>
-              <p>{formatPrevDescription()} - {formatTime(timeframes[timeframe]?.previous)}</p>
-            </div>
-          </section>
+    <li className={`activity-card ${title.toLowerCase().replace(' ', '-')}`}>
+      <div className="activity-card-data">
+        <h2>{title}</h2>
+        <img src="./images/icon-ellipsis.svg" alt="More Information" />
+        <p>{formatTime(timeframes[timeframe]?.current)}</p>
+        <p>{formatPrevDescription()} - {formatTime(timeframes[timeframe]?.previous)}</p>
+      </div>
+    </li>
   )
 }

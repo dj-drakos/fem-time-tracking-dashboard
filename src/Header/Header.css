@@ -11,8 +11,7 @@ header {
   background: hsl(246, 80%, 60%);
   border-radius: var(--corner);
   display: grid;
-  grid-template: 'icon p' 35px
-                 'icon h1' 35px / 70px auto;
+  grid-template: 'icon text' 70px / 70px auto;
   column-gap: 18px;
 }
 
@@ -24,21 +23,22 @@ header {
   border-radius: 50%;
 }
 
-.profile > p {
-  grid-area: p;
-  align-self: flex-end;
+.profile > .info {
+  grid-area: text;
+  align-self: center;
+}
+
+.info > p {
   font-size: .9rem;
   color: hsl(236, 100%, 87%);
   margin-bottom: 4px;
 }
 
-h1 {
-  grid-area: h1;
-  align-self: flex-start;
+h1 {  
   font-weight: 300;
 }
 
-ul {
+.nav {
   height: 100%;
   display: flex;
   justify-content:space-evenly;
@@ -47,12 +47,12 @@ ul {
   font-weight: 400;
 }
 
-li {
+.nav > li {
   text-transform: capitalize;
   cursor: pointer;
 }
 
-li:active, li.selected {
+.nav > li:active, .selected {
   color: white;
 }
 
@@ -64,25 +64,19 @@ li:active, li.selected {
 
   .profile {
     grid-template: 'icon' 85px 
-                    'p' auto
-                    'h1' auto / 1fr;
-    column-gap: 0;
+                    'text' / 1fr;
   }
 
   .profile > img {
     width: 85px;
-    height: auto;
-    border: 2px solid white;
   }
 
   h1 {
     font-size: 2.5rem;
   }
 
-  ul {
+  .nav {
     padding: 0 32px;
     flex-direction: column;
   }
-
 }
-
