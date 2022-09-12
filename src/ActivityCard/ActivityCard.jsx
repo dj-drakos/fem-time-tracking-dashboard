@@ -1,10 +1,12 @@
 import './ActivityCard.css'
 
 export default function ActivityCard({item, timeframe}) {
+  const {title, timeframes} = item;
 
   function formatTime(time) {
     if(time === 1) return `${time} hr`;
-    else return `${time} hrs`
+    if(!time) return '0 hrs';
+    else return `${time} hrs`;
   }
 
   function formatPrevDescription() {
@@ -15,12 +17,12 @@ export default function ActivityCard({item, timeframe}) {
   }
 
   return (
-    <section key={item.title} className={`activity-card ${item.title.toLowerCase().replace(' ', '-')}`}>
+    <section key={title} className={`activity-card ${title.toLowerCase().replace(' ', '-')}`}>
             <div className="activity-card-data">
-              <h2>{item.title}</h2>
+              <h2>{title}</h2>
               <img src="./images/icon-ellipsis.svg" alt="More Information" />
-              <p>{formatTime(item.timeframes[timeframe]?.current)}</p>
-              <p>{formatPrevDescription()} - {formatTime(item.timeframes[timeframe]?.previous)}</p>
+              <p>{formatTime(timeframes[timeframe]?.current)}</p>
+              <p>{formatPrevDescription()} - {formatTime(timeframes[timeframe]?.previous)}</p>
             </div>
           </section>
   )

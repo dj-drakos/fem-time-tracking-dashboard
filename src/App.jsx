@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ActivityCard from './ActivityCard/ActivityCard';
+import Header from './Header/Header'
 import './App.css';
 import data from './data.json';
 
@@ -10,19 +11,7 @@ function App() {
 
   return (
     <div className="App"> 
-      <header>
-        <section className="profile">
-          <img src="./images/image-jeremy.png" alt="Jeremy Robson" />
-          <p>Report for</p>
-          <h1>Jeremy Robson</h1>
-        </section>
-
-        <nav>
-          <ul>
-            {timeframes.map(item => <li key={item} className={timeframe === item && 'selected'}onClick={() => setTimeframe(item)}>{item}</li>)}
-          </ul>
-        </nav>
-      </header>
+      <Header setTimeframe={setTimeframe} timeframe={timeframe}timeframes={timeframes}/>
 
       <main>
         {data.map(item => (
